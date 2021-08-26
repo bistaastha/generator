@@ -1,1 +1,71 @@
-{"workload":{"module":"./../init.js","functions":{"scheduling":"round-robin","items":[{"name":"initMarble","parameters":[{"name":"marbleName","type":"formatted_string","options":{"format":"%s_%s_%s_%s","parts":[{"type":"parameter_reference","options":{"name":"marblePrefix"}},{"type":"variable_reference","options":{"name":"roundIndex"}},{"type":"variable_reference","options":{"name":"workerIndex"}},{"type":"variable_reference","options":{"name":"txIndex"}}]}},{"name":"marbleColor","type":"list_element","options":{"list":["red","blue","green","black","white","pink","rainbow"],"selector":{"type":"variable_reference","options":{"name":"txIndex"}}}},{"name":"marbleSize","type":"cycling_number","options":{"begin":10,"end":100,"selector":{"type":"variable_reference","options":{"name":"txIndex"}}}}]}]}}}
+{
+  "workload": {
+    "module": "./../init.js",
+    "functions": {
+      "scheduling": "round-robin",
+      "items": [
+        {
+          "name": "initMarble",
+          "parameters": [
+            {
+              "name": "marbleName",
+              "type": "formatted_string",
+              "options": {
+                "format": "%s_%s_%s_%s",
+                "parts": [
+                  {
+                    "type": "parameter_reference",
+                    "options": { "name": "marblePrefix" }
+                  },
+                  {
+                    "type": "variable_reference",
+                    "options": { "name": "roundIndex" }
+                  },
+                  {
+                    "type": "variable_reference",
+                    "options": { "name": "workerIndex" }
+                  },
+                  {
+                    "type": "variable_reference",
+                    "options": { "name": "txIndex" }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "marbleColor",
+              "type": "list_element",
+              "options": {
+                "list": [
+                  "red",
+                  "blue",
+                  "green",
+                  "black",
+                  "white",
+                  "pink",
+                  "rainbow"
+                ],
+                "selector": {
+                  "type": "variable_reference",
+                  "options": { "name": "txIndex" }
+                }
+              }
+            },
+            {
+              "name": "marbleSize",
+              "type": "cycling_number",
+              "options": {
+                "begin": 10,
+                "end": 100,
+                "selector": {
+                  "type": "variable_reference",
+                  "options": { "name": "txIndex" }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
